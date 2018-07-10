@@ -1,0 +1,263 @@
+
+
+\documentclass[a4paper,11pt,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{emptypage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 'dedication' environment: To add a dedication paragraph at the start of book %
+% Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pbsi}
+\usepackage[T1]{fontenc}
+
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.66\textwidth}
+   \raggedright
+}
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter quote at the start of chapter        %
+% Source: http://tex.stackexchange.com/a/53380 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First page of book which contains 'stuff' like: %
+%  - Book title, subtitle                         %
+%  - Book author name                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Book's title and subtitle
+\title{\Huge \textbf{Tutoring Handbook\\}
+%\footnote{This is a footnote.}
+\\ \huge ECS 197T \\
+%\footnote{This is yet another footnote.}
+\\ \normalsize \textit{University of California, Davis}}
+% Author
+\author{\textsc{Computer Science Tutoring Club}
+\\ \textsc{Version 1.0}}
+%\thanks{\url{www.example.com}}}
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a dedication paragraph to dedicate your book to someone %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mainmatter
+
+%%%%%%%%%%%
+% Preface %
+%%%%%%%%%%%
+\chapter*{Preface}
+This handbook is intended to be read by tutors who sign up for ECS 197T. I decided to write this handbook mainly because there were many questions and clarifications which were asked repeatedly.
+\\ \\
+I hope that this handbook would be able to answer any questions that you may have. Since this handbook is a work in progress, your comments and suggestions will be valued the most.
+
+\section*{About Us}
+The Computer Science Tutoring Club, offers tutoring for all undergraduate students for free. The club offers tutoring for all lower division Computer Science classes and an increasing number of Upper Division courses every quarter.
+\\ \\
+Over the past year, CS Tutoring has expanded by a lot and averages at about 50 tutors every quarter. It is due to this expansion that caused us to operate separately from the Davis Computer Science Club (DCSC). We are currently closely affiliated with the Computer Science Department, here, at UC Davis and have close relations with the DCSC.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Give credit where credit is due. %
+% Say thanks!                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\begin{itemize}
+\item A special word of thanks goes to Alex Fu (Class of 2017), who has guided CS Tutoring to where it stands today!
+\item I would also like to thank the Computer Science Department for their indefinite support.
+\item I'm deeply indebted to my parents, colleagues and friends for their support and encouragement.
+\end{itemize}
+\mbox{}\\
+%\mbox{}\\
+\noindent Aakash Prabhu '19
+
+%%%%%%%%%%%%%%%%
+% NEW CHAPTER! %
+%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+
+\begin{chapquote}{Joel Spolsky}
+%\textit{Source of this quote}}
+``Good software, like wine, takes time.''
+\end{chapquote}
+
+\section{Our Officers}
+Please take a few seconds to get to know our officers for CS Tutoring. They have put in a lot of time and effort into making all of this possible.
+\\ \\
+To slow down the reception of spam emails, a direct link to email id's have not been provided.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sample table                                        %
+% Source: www1.maths.leeds.ac.uk/latex/TableHelp1.pdf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[ht]
+\caption{Officers} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c}
+% centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+S. No.  & Name & Position &  E-mail \\ [0.5ex]
+% inserts table
+%heading
+\hline % inserts single horizontal line
+1 & Aakash Prabhu & Chair & aakprabhu [at] ucdavis [dot] edu \\
+2 & Aaron Kaloti & Vice Chair & apksingh [at] ucdavis [dot] edu \\
+3 & Nikhil Yerramilli & Vice Chair & yvsami [at] ucdavis [dot] edu \\
+[1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+
+
+\chapter{Requirements for Tutoring}
+\begin{chapquote}{Bill Gates}
+%\textit{Source of this quote}}
+``Measuring programming by lines of code is like measuring aircraft building progress by weight.''
+\end{chapquote}
+\section {Requirements}
+After you have applied to be a tutor, the major advisers review your application and get back to us with approvals and CRN's (if you have applied to receive units as well). Here are the requirements to be accepted for tutoring.
+\subsection{GPA Requirements}
+According to departmental policies, if you wish to tutor for a particular ECS class, you must have a \textit{B+} or more in that class \textbf{AND} must have a cumulative CS GPA \footnote{You may find your cumulative CS GPA in \href{http://oasis.ucdavis.edu}{http://oasis.ucdavis.edu}} of \textit{3.0} or more.
+
+\subsection{What if my CS GPA is below 3.0?}
+If your CS GPA is a little under 3.0 (say 2.94), and if you have tutored with us before, please contact the chair for approvals. Do remember that you may only tutor those courses in which you have received a B+ or more.
+\chapter{Where and How to Tutor}
+
+\begin{chapquote}{John Johnson}
+%\textit{Source of this quote}}
+``First, solve the problem. Then, write the code.''
+\end{chapquote}
+
+\section{Where to Tutor?}
+If you are currently signed up for tutoring, and are reading this, thank you for taking the time out off your weekly schedule to help students who have a hard time understanding concepts.
+\subsection{Location}
+Tutoring will take place in Kemper 75 (the basement). Simply to go to Kemper 75 during tutoring hours, write your name, your timings for the day, and the classes you tutor on the white board. If there is no space in Kemper 75, you may sit in another room, but please specify that on the white board. Try to appear like a tutor. If you see someone screening through the white board for tutors, approach them, and ask if they'd like to be tutored.
+
+\subsection{Sending in your schedules}
+You will be required to send in your schedule for the quarter and your preferred times for tutoring by the second or third week of the quarter via email. Your timings would help us set up an effective method to match you with other tutees and direct students easily.
+
+\section{Tips for tutoring}
+Think of tutoring as just explaining to your friend who doesn't understand something. You may use any method to get your point across to your tutee. Here are some tips: \\ \\
+\indent \textbf{1. \large DO NOT WRITE CODE FOR STUDENTS.} This is a very risky thing to do. If you happen to help two students with the same program and end up writing parts of their code, there are very high chances that those two students will be reported for plagiarism. This has happened twice before and the tutor was also sent to the SJA.\\
+\indent \textbf{2.} Try to use the whiteboard to explain unclear concepts. You may get markers from the main CSIF office (or you may even bring your own markers). You may also use paper or anything of that sort to get your point across. It would be very difficult to understand what you might be saying if you aren't going to write out anything.\\
+\indent \textbf{3.} Use as many examples as possible. A lot of concepts become clear if you use examples than just plain theory. \\
+\indent \textbf{4.} Please try not give students the answer to problems. It would just be a waste of time then. Students aren't going to learn anything if you just solve the problem for them. Homework problems are the key to doing well on exams. It is important that students understand how to solve these problems.\\
+
+
+\chapter{For-Unit Tutors}
+\begin{chapquote}{Edsger Dijkstra}
+%\textit{Source of this quote}}
+``Computer Science is no more about computers than astronomy is about telescopes.''
+\end{chapquote}
+\section{Requirements}
+If you applied to be a tutor and have requested to receive units, here are the requirements to get a Pass for this class.\\
+\textbf{These requirements will be strongly enforced. No exceptions will be made.}
+\subsection{Attend Weekly Meetings}
+If you are a for-unit tutor, you are required to attend weekly meetings. Weekly meetings are generally 15 minutes long and we generally go over what topics are being covered in various CS Classes and about tutoring in general. We also sign up hosts for review sessions during these meetings. \\
+\par If you miss a meeting, do not worry. A recap email is generally sent out and has everything that we discussed during the meeting.
+\\ \\  Note: If you are a for-unit tutor, you are allowed to miss up to two meetings. This will be strongly enforced.
+\subsection{Complete Your Required Hours for the Week}
+For every unit, you are required to tutor 3 hours per week. For example: \\
+\indent 1 unit = 3 hours per week. \\
+\indent 2 units = 6 hours per week. \\
+% \indent 3 units = 9 hours per week. \\
+\par Please be true to your timings. If you are busy during the particular week and you tutor for fewer hours that week, that's okay! We understand if you have 3 midterms on a single day. Kindly let us know in advance. \\
+\par Please try to be as consistent as you can with your timings for the quarter. For example, if you generally tutor on Wednesday's and want to tutor on Friday for a particular week, that is perfectly alright. \\
+\par \textbf{NOTE}: Hours for the week do not roll over. If you tutor for 14 hours on a particular week, it only counts as how many ever hours you initially signed up for. As much as I deeply appreciate you spending extra time tutoring, hours do not roll over for the next week.
+
+\subsection{Host At Least 1 Review Session}
+Student hosted review sessions is something unique to CS Tutoring. For-unit tutors are required to host at least 1 review session for any class that they tutor for. You are expected to prepare for the review session and you are also expected to go over any questions or topics that students might want you to go over. If you have taken a course with the same instructor, then you may use your materials as a reference. However, giving out past material is strictly against the policy as this is really risky and might get you reported for academic misconduct. Please try to follow this.\\
+\par For those of you who feel uncomfortable hosting a review session alone, do not worry. Generally, review sessions are hosted by 2 - 3 tutors on an average (sometimes more). The hosts generally get together and decide as to how to go about hosting the review session. Please try to keep the review session at a time that is convenient for most students to attend. Something like 6 PM would be a good time to host a review session as most people will not have class then.\\
+\par If you host a review session, it counts as double hours for the week. For example, if you signed up for 1 unit and you host a review session for 1.5 hours then, you have completed your hours for the week.
+
+\chapter{Class Informants or Dedicated Tutors}
+\begin{chapquote}{Every CS Major}
+%\textit{Source of this quote}}
+``if (sad() == true) \{ \\ \indent sad().stop(); \\ \indent beAwesome(); \\ \}''
+\end{chapquote}
+\section{Responsibilities}
+During each meeting, I will go over what topics are being covered in all lower division classes and a few upper division classes (based on the number of people who tutor upper division courses). This will keep tutors informed in case they are required to help out students. I will also go over the programming assignments of each class (if any) so that tutors can be better prepared.\\
+\par As a dedicated tutor (or class informant) for a particular ECS class, you are required to email us what topics are covered in that class, when the next homework and/or programming assignment is due, and when the next midterm is. By doing this, you get two hours off your weekly hours.
+\\
+\indent \textit{For example:} If you sign up for two units of tutoring and if you sign up as a dedicated tutor for, say ECS 50, then you only need to tutor for 4 hours a week instead of the usual 6 hours. \\
+\par \textbf{Please email the required information BEFORE THE START of every meeting (Not during the meeting). I check the time-stamp of every dedicated tutor email and if you send it after the meeting, you will not get your hours deducted for the week. \textit{THIS WILL BE STRONGLY ENFORCED.}}
+\section{E-Mail Format}
+Please use the following format to send in your dedicated tutor emails: \\ \\
+\indent \textbf{Subject of the email:} \textit{ECSxx: Dedicated Tutor - Updates} \\ \\
+\indent \textbf{Body of the email:} \\
+\indent \underline{Current topics taught in class:} <include topics> \\
+\indent \underline{Next Midterm Date:} <include midterm date> \\
+\indent \underline{Assignments:} <include description and due date>
+
+
+\chapter{Logging Hours}
+\begin{chapquote}{Donald Knuth}
+%\textit{Source of this quote}}
+``Computers are good at following instructions but not at reading your mind.''
+\end{chapquote}
+\begin{itemize}
+    \item Before the first weekly meeting, we will send out a time-sheet for everybody to print out. Everybody should have only one time-sheet (unless it gets filled up during the quarter).
+    \item Fill in the appropriate details on the time-sheet as directed when you tutor a student.
+    \item During the times you are not tutoring, your time-sheet should be in the CS Tutoring Binder in the CSIF (ask the staff for help if needed).
+    \item When you come during your tutoring hours, make sure your detach YOUR time-sheet from the binder and fill out the information on the sheet.
+    \item When you're done tutoring for the day, put your sheet back into the binder before you leave the building. We will collect the time-sheet at a random time during the week to check if tutors are meeting their requirements.
+\end{itemize}
+
+
+\chapter{Applications for Next Quarter}
+\begin{chapquote}{Sean Davis, University of California, Davis}
+%\textit{Source of this quote}}
+``Never use a B-Tree in RAM!''
+\end{chapquote}
+If you wish to apply to be a tutor for the next quarter, applications will be open after the end of the current quarter and will be reviewed after final grades have been processed. \\
+\par We hope you had a great quarter tutoring and we hope you met new people and improved on your personal communication skills! See you again next quarter and good luck with your classes!
+\\ \\
+\bsifamily{- The Computer Science Tutoring Committee}
+
+
+
+
+\end{document}
