@@ -11,6 +11,6 @@ other FAQ.
 
 Interested in contributing to this repository? See a typo/error?
 
-1. Fork this repository.
-2. Make your changes.
-3. Submit a pull request to contribute!
+Please contribute! But first please read
+[Common/CONTRIBUTING.md](https://github.com/UC-Davis-CS-Tutoring/Common/blob/master/CONTRIBUTING.md)
+as well as the CONTRIBUTING.md document in this repository.
